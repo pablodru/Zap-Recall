@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 export default function Card(props){
 
-    const {question, answer, id, counter, setCounter, answers, setAnswers} = props;
+    const {question, answer, id, counter, setCounter, answers, setAnswers, arrayAnswers, setArrayAnswers} = props;
 
     let [inLive, setInLive] = useState('screen1');
     let [imageFinal, setImageFinal] = useState('');
@@ -69,16 +69,19 @@ export default function Card(props){
             setColorFinal('#FF3030');
             setImageFinal(icone_erro);
             setDataTest('no-icon');
+            setArrayAnswers([...arrayAnswers, icone_erro]);
 
         } else if(r === 'almost') {
             setColorFinal('#FF922E');
             setImageFinal(icone_quase);
             setDataTest('partial-icon');
+            setArrayAnswers([...arrayAnswers, icone_quase]);
 
         } else if( r === 'right' ){
             setColorFinal('#2FBE34');
             setImageFinal(icone_certo);
             setDataTest('zap-icon');
+            setArrayAnswers([...arrayAnswers, icone_certo]);
         }
 
     }

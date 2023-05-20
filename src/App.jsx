@@ -11,6 +11,7 @@ export default function App(){
 
   let [counter, setCounter] = useState(0);
   let [goRecall, setGoRecall] = useState(false);
+  const [arrayAnswers, setArrayAnswers] = useState([]);
 
   return (
     <>
@@ -21,8 +22,8 @@ export default function App(){
       {goRecall && (
         <SCPage>
           <Header />
-          <Main cards={cards} counter={counter} setCounter={setCounter} />
-          <Footer counter={counter} />
+          <Main cards={cards} counter={counter} setCounter={setCounter} arrayAnswers={arrayAnswers} setArrayAnswers={setArrayAnswers} />
+          <Footer counter={counter} arrayAnswers={arrayAnswers} />
         </SCPage>
       )}
     </>
