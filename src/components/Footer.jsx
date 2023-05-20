@@ -10,7 +10,7 @@ export default function Footer({counter, arrayAnswers}){
     let [title, setTitle] = useState('');
     let [message, setMessage] = useState('');
 
-    if(counter===1 && !isFinished ){
+    if(counter===8 && !isFinished ){
         setIsFinished(true)
         let c = 0;
 
