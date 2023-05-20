@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-export default function Footer(){
+export default function Footer({counter}){
     return (
-        <SCFooter>
-            <p>0/4 CONCLUÍDOS</p>
+        <SCFooter data-test='footer' >
+            <p>{counter}/8 CONCLUÍDOS</p>
         </SCFooter>
     )
 }

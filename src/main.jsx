@@ -5,6 +5,7 @@ import Reset from './css/Reset';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <Reset />
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
 )
