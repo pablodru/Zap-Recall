@@ -15,20 +15,6 @@ export default function Card(props){
     let [colorFinal, setColorFinal] = useState('');
     let [dataTest, setDataTest] = useState('');
 
-    const questionText =    <>
-                                <p data-test='flashcard-test' >{question}</p>
-                                <img src={seta_virar} alt="virar" onClick={() => setInLive('screen3')} />
-                            </>;
-
-    const questionAnswer =  <>
-                                <p data-test='flashcard-test' > {answer}</p>
-                                <div>
-                                    <SCButtonRed onClick={() => response('wrong')} data-test='no-btn' >Não lembrei</SCButtonRed>
-                                    <SCButtonOrange onClick={() => response('almost')} data-test='partial-btn' >Quase não lembrei</SCButtonOrange>
-                                    <SCButtonGreen onClick={() => response('right')} data-test='zap-btn' >Zap!</SCButtonGreen>
-                                </div>
-                            </>;
-
     return (   
         <>
             {inLive === 'screen1' && (
@@ -39,15 +25,21 @@ export default function Card(props){
 
             {inLive === 'screen2' && (
                 <SCQuestion data-test='flashcard' >
-                    {questionText}
+                    <p data-test='flashcard-test' >{question}</p>
+                    <img src={seta_virar} alt="virar" onClick={() => setInLive('screen3')} />
                 </SCQuestion>)}
 
             {inLive === 'screen3' && (
                 <SCQuestion data-test='flashcard' >
-                    {questionAnswer}
+                    <p data-test='flashcard-test' > {answer}</p>
+                    <div>
+                        <SCButtonRed onClick={() => response('wrong')} data-test='no-btn' >Não lembrei</SCButtonRed>
+                        <SCButtonOrange onClick={() => response('almost')} data-test='partial-btn' >Quase não lembrei</SCButtonOrange>
+                        <SCButtonGreen onClick={() => response('right')} data-test='zap-btn' >Zap!</SCButtonGreen>
+                    </div>
                 </SCQuestion>)}
 
-                {inLive === 'screen4' && (
+            {inLive === 'screen4' && (
                 <SCTitleAnswered colorfinal={colorFinal} data-test='flashcard' > 
                     <p >Pergunta {id+1}</p>
                     <img src={imageFinal} alt="final" data-test={dataTest} />
@@ -89,7 +81,7 @@ export default function Card(props){
 
 const SCTitle = styled.div`
     width:80%;
-    height:65px;
+    min-height:65px;
     margin:25px auto;
     background-color:#ffffff;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
@@ -110,6 +102,7 @@ const SCTitle = styled.div`
     img{
         width:6%;
         height:44%;
+        cursor:pointer;
     }
 `
 
@@ -120,7 +113,7 @@ const SCQuestion = styled.div`
     background-color:#ffffff;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
-    padding:2%;
+    padding:4% 2% 2% 4%;
 
     display:flex;
     flex-direction:column;
@@ -145,6 +138,7 @@ const SCQuestion = styled.div`
         position:absolute;
         bottom:6px;
         right:15px;
+        cursor:pointer;
     }
     div{
         width:100%;
@@ -158,7 +152,7 @@ const SCQuestion = styled.div`
     }
     button{
         width:85px;
-        height:37px;
+        min-height:37px;
         border-radius: 5px;
 
         font-family: 'Recursive';
@@ -167,6 +161,7 @@ const SCQuestion = styled.div`
         font-size: 12px;
         line-height: 14px;
         color:#ffffff;
+        cursor:pointer;
     }
 `
 

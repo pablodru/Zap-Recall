@@ -12,18 +12,12 @@ export default function Footer({counter, arrayAnswers}){
 
     if(counter===8 && !isFinished ){
         setIsFinished(true)
-        let c = 0;
 
-        arrayAnswers.forEach(e => {
-            if(e==="/src/assets/icone_erro.png") {
-                setImage(sad);
-                setTitle('Putz...')
-                setMessage('Ainda faltam alguns... Mas não desanime!')
-                c=c+1;
-            }
-        })
-
-        if(c===0){
+        if(arrayAnswers.includes("/src/assets/icone_erro.png")){
+            setImage(sad);
+            setTitle('Putz...')
+            setMessage('Ainda faltam alguns... Mas não desanime!')
+        } else {
             setImage(party);
             setTitle('Parabéns!')
             setMessage('Você não esqueceu de nenhum flashcard!')

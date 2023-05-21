@@ -51,5 +51,6 @@ const SCWelcome = styled.div`
         line-height: 22px;
         text-align: center;
         color: #D70900;
+        cursor:pointer;
     }
 `
