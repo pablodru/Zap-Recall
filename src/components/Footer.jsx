@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import party from '../assets/party.png';
 import sad from '../assets/sad.png';
+import icone_erro from '../assets/icone_erro.png';
 
 export default function Footer({counter, arrayAnswers}){
     console.log(arrayAnswers)
@@ -13,7 +14,7 @@ export default function Footer({counter, arrayAnswers}){
     if(counter===8 && !isFinished ){
         setIsFinished(true)
 
-        if(arrayAnswers.includes("/src/assets/icone_erro.png")){
+        if(arrayAnswers.includes(icone_erro)){
             setImage(sad);
             setTitle('Putz...')
             setMessage('Ainda faltam alguns... Mas não desanime!')
@@ -61,11 +62,11 @@ const SCFooter = styled.div`
 
     p{
         font-family: 'Recursive';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    color:#333333;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color:#333333;
     }
 
     div{
@@ -73,6 +74,7 @@ const SCFooter = styled.div`
         justify-content:space-between;
         align-items:center;
         gap:5px;
+        margin: 10px;
     }
     img{
         width:23px;

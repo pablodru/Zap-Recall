@@ -152,7 +152,7 @@ const SCQuestion = styled.div`
     }
     button{
         width:85px;
-        min-height:37px;
+        height:39px;
         border-radius: 5px;
 
         font-family: 'Recursive';
