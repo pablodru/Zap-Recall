@@ -110,7 +110,7 @@ const SCQuestion = styled.div`
     width:80%;
     min-height:131px; //MESMO DA DIV DA RESPOSTA, DA PRA FAZER POR VARIAVEL
     margin:25px auto;
-    background-color:#ffffff;
+    background-color:#FFFFD4;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     padding:4% 2% 2% 4%;
